@@ -17,6 +17,8 @@ h1 {
     font-family: 'Space Mono', monospace;
     margin-bottom: 12px;
     letter-spacing: 2px;
+    box-shadow: #02612d 1px 20px 10px;
+    border-radius: 10px;
 }
 
 h1:hover{
@@ -25,6 +27,9 @@ h1:hover{
 
 p{
     margin: 12px 0px;
+    box-shadow: #02612d 1px 20px 10px;
+    border-radius: 7px;
+    padding: 4px;
 }
 
 #top{
@@ -36,17 +41,21 @@ p{
     color: rgb(203, 224, 133);
     font-size: 6vw;
     letter-spacing: 1px;
+    box-shadow: #02612d 1px 1px 1000px;
 }
 
 button{
     color: #016f32;
-    width: 150px;
+    width: 50vw;
     background: goldenrod;
     border: 0px;
-    padding: 5px 8px 5px 8px;
+    padding: 10px 8px 10px 8px;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: large;
-    border-radius: 5px;
-    margin-bottom: 12px;
+    border: solid 4px darkgoldenrod;
+    box-shadow: #02612d 1px 20px 10px;
+    border-radius: 7px;
+    margin: 4;
+    
 }
