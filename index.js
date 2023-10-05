@@ -10,8 +10,8 @@ let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
 
 let player = {
-    name: "Luke",
-    chips: 145
+    name: "User",
+    chips: 0
 }
 playerEl.textContent = player.name + ": $" + player.chips
 
@@ -27,30 +27,39 @@ function getRandomCard() {
 }
 
 function startGame() {
-    let firstCard = getRandomCard()
-    let secondCard = getRandomCard()
-    cards.push(firstCard, secondCard)
-    sum = firstCard + secondCard
     isAlive = true
+    let firstCard = 10
+    let secondCard = 11
+    cards = [firstCard, secondCard]
+    sum = firstCard + secondCard
     renderGame()
 }
 
+function randomChips() {
+    let randomChips = Math.floor(Math.random() * 10000) + 1
+    return player.assign({}, player, { [chips]: object[chips] + randomChips});
+}
+
 function renderGame() {
+    cardsEl.textContent = "Cards: "
+    for (let i = 0; i < cards.length; i++) {
+        cardsEl.textContent += cards[i] + " "
+    }
+
+    sumEl.textContent = "Sum: " + sum
     if (sum <= 20) {
         message = "Do you want to draw a new card?"
     } else if (sum === 21) {
         message = "You've got Blackjack!"
         hasBlackJack = true
+        
     } else {
         message = "You're out of the game!"
         isAlive = false
     }
-    sumEl.textContent = "Sum: " + sum
+    
     messageEl.textContent = message
-    cardsEl.textContent = "Cards: " 
-    for(let i = 0; i < cards.length; i++){
-        cardsEl.textContent += cards[i] + space
-    }
+
 }
 
 function newCard() {
@@ -59,6 +68,36 @@ function newCard() {
     sum += card
     cards.push(card)
     renderGame()
+    
     }
+}
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+let interval = null;
+
+document.querySelector("h1").onmouseover = event => {  
+  let iteration = 0;
+  
+  clearInterval(interval);
+  
+  interval = setInterval(() => {
+    event.target.innerText = event.target.innerText
+      .split("")
+      .map((letter, index) => {
+        if(index < iteration) {
+          return event.target.dataset.value[index];
+        }
+      
+        return letters[Math.floor(Math.random() * 26)]
+      })
+      .join("");
+    
+    if(iteration >= event.target.dataset.value.length){ 
+      clearInterval(interval);
+    }
+    
+    iteration += 1 / 10;
+  }, 40);
 }
 

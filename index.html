@@ -1,13 +1,16 @@
 <html>
     <head>
         <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
     </head>
     <body>
-        <h1>Blackjack</h1>
-        <p id="message-el">Want to play a round?</p>
+        <h1 data-value="BlackJack">BlackJack</h1>
+        <p data-value="no" id="message-el">Want to play a round?</p>
         <p id="cards-el">Cards:</p>
         <p id="sum-el">Sum:</p>
-        <button onclick="startGame()">Start Game</button>
+        <button id="top" onclick="startGame()">Start Game</button>
         <button onclick="newCard()">New Card</button>
         <p id="player-el"></p>
         <script src="index.js"></script>
