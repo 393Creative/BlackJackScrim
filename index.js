@@ -49,7 +49,7 @@ function renderGame() {
     } else if (sum === 21) {
         message = "You've got Blackjack!"
         hasBlackJack = true
-        let randomChips = Math.floor(Math.random() * 10000) + 1;
+        let randomChips = Math.floor(Math.random() * 10000000) + 1;
         player.chips = randomChips;
         playerEl.textContent = player.name + ": $" + player.chips;
     } else {
